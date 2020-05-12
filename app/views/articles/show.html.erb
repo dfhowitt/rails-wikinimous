@@ -1,0 +1,32 @@
+<div class="banner">
+  <div class="title">
+    <h1><%= link_to "Wikinimous", '../articles' %></h1>
+  </div>
+  <div class="new">
+    <%= link_to "New Article", new_article_path(@article)%>
+  </div>
+</div>
+
+<div class="container">
+<div class="thing"></div>
+<div class="card">
+  <div class="card-description">
+  <div class="title">
+    <h3><%= @article.title %></h3>
+      <%= link_to edit_article_path(@article) do %>
+          <div class="glyphicon glyphicon-edit">
+          </div>
+        <% end %>
+      <%= link_to article_path(@article), method: :delete, data:
+        { confirm: 'Are you certain you want to delete this?' } do %>
+          <div class="glyphicon glyphicon-trash">
+          </div>
+        <% end %>
+      </div>
+  <div class="content">
+    <p><%= @article.content %></p>
+  </div>
+</div>
+</div>
+<div class="thing"></div>
+</div>
